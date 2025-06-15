@@ -1,0 +1,602 @@
+/* ====================================================
+  IMPORTS DE POLICES
+==================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/coluna-rounded');
+
+/* ====================================================
+  VARIABLES DE COULEURS PAR THÈME (CSS Custom Properties)
+==================================================== */
+.theme-A { --primary-color: #567B34; --primary-color-rgb: 86, 123, 52; }
+.theme-B { --primary-color: #DD9341; --primary-color-rgb: 221, 147, 65; }
+.theme-C { --primary-color: #FAA619; --primary-color-rgb: 250, 166, 25; }
+.theme-D { --primary-color: #577199; --primary-color-rgb: 87, 113, 153; }
+.theme-E { --primary-color: #E08044; --primary-color-rgb: 224, 128, 68; }
+.theme-F { --primary-color: #903012; --primary-color-rgb: 144, 48, 18; }
+.theme-G { --primary-color: #6097ED; --primary-color-rgb: 96, 151, 237; }
+.theme-H { --primary-color: #6A8D67; --primary-color-rgb: 106, 141, 103; }
+.theme-I { --primary-color: #9E2128; --primary-color-rgb: 158, 33, 40; }
+
+/* ====================================================
+  BASE & RESET
+==================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* ====================================================
+  TYPOGRAPHIE
+==================================================== */
+h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--primary-color);
+}
+
+/* ====================================================
+  LAYOUT GLOBAL
+==================================================== */
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* ====================================================
+  HEADER / HERO
+==================================================== */
+.header {
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+  overflow: hidden;
+  background-color: white;
+  height: 90vh;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 100%;
+    padding-bottom: 100px;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-content img {
+  width: 90px;
+}
+
+.hero .title_id {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-family: 'Coluna Rounded', sans-serif;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 5;
+  font-size: 3rem;
+  line-height: 1.1;
+  width: fit-content;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+.hero-text {
+  font-size: 15px;
+  font-weight: bold;
+  max-width: 500px;
+}
+
+.hero-back {
+  display: flex;
+  align-items: flex-start;
+  width: 80%;
+  margin: auto;
+  margin-top: -70px;
+  gap: 50px;
+  justify-content: center;
+}
+
+@media (max-width: 945px) {
+  .image-back {
+    display: none;
+  }
+}
+
+.hero-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+@media (max-width: 645px) {
+  .hero-details {
+    flex-direction: column;
+  }
+}
+
+/* ====================================================
+  IMAGES / MOTIFS / ELEMENTS DÉCORATIFS
+==================================================== */
+.image-back {
+  max-width: 300px;
+  flex: 2;
+  max-height: 420px;
+}
+
+.pattern-box,
+.grid-pattern {
+  position: absolute;
+  left: 50px;
+  top: 160px;
+  background-size: cover;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+.pattern-box {
+  width: 160px;
+  height: 100px;
+  background-image: url("pictos/motif-1.svg");
+}
+
+.grid-pattern {
+  background-image: url("pictos/grille.svg");
+}
+
+.motif-container {
+  height: 250px;
+  width: 100%;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+/* ====================================================
+  CARTES (CARD) & GRILLE
+==================================================== */
+.card {
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.card .quote {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.card:has(.quote) {
+  background-size: 70px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid .card {
+  flex: 1 1 calc(50% - 1.5rem);
+  min-width: 300px;
+  max-width: calc(50% - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .grid .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ====================================================
+  SÉPARATEUR
+==================================================== */
+.separator {
+  height: 2px;
+  background-color: var(--primary-color);
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 1px;
+}
+
+/* ====================================================
+  SLIDER / CAROUSEL
+==================================================== */
+.slider-container {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 8px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .slider-container { 
+    height: 300px;
+  }
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.slider-container .slider img {
+  width: 400px !important;
+  height: 400px !important;
+  min-width: 400px !important;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* ====================================================
+  SLIDER - NAVIGATION & INDICATEURS
+==================================================== */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #fff;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav.prev { left: 10px; }
+.nav.next { right: 10px; }
+
+.nav:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.slider-controls button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-controls button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.nav.fullscreen {
+  top: 30px;
+  right: 10px;
+  left: auto;
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.nav.fullscreen:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Styles à appliquer quand .slider-container est en plein écran */
+.slider-container:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* For browsers supporting ::-webkit-full-screen */
+.slider-container:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Assure que le slider prend toute la place */
+.slider-container:fullscreen .slider,
+.slider-container:-webkit-full-screen .slider {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Et les images à l'intérieur s'adaptent bien */
+.slider-container:fullscreen .slider img,
+.slider-container:-webkit-full-screen .slider img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important; /* ou cover selon ce que tu préfères */
+}
+
+
+/* ====================================================
+  DÉTAILS VISUELS & ICONOGRAPHIE
+==================================================== */
+.quote {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.content {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('pictos/picto-environnement.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+/* ====================================================
+  TAGS / LABELS
+==================================================== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4em 0.8em;
+  border: 1px solid var(--primary-color, #007bff);
+  border-radius: 999px;
+  font-size: 0.9em;
+  color: white;
+  background-color: var(--primary-color, #007bff);
+  gap: 0.5em;
+  margin-top: 10px;
+}
+
+.tag .tag-text {
+  font-weight: bold;
+}
+
+.tag .svg-container {
+  width: 1.2em;
+  height: 1.2em;
+  display: inline-block;
+}
+
+.tag .svg-container svg {
+  width: 100%;
+  height: 100%;
+  fill: white;
+}
+
+/* ====================================================
+  IMAGES / WRAPPERS / VIDEOS
+==================================================== */
+.card img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  padding-bottom: 75%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--primary-color-rgb), 0.2);
+  z-index: 1;
+}
+
+video {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* ====================================================
+  GUILLEMETS (STYLES CITATIONS)
+==================================================== */
+.guillemet {
+  display: none;
+}
+
+.guillemet-top,
+.guillemet-back {
+  width: 100%;
+  display: flex;
+}
+
+.guillemet-top {
+  justify-content: flex-end;
+}
+
+.guillemet-back {
+  justify-content: flex-start;
+}
+
+.guillemet-top svg,
+.guillemet-back svg {
+  height: 30px;
+  width: auto;
+  color: var(--primary-color);
+}
+
+/* ====================================================
+  AUTRES STYLES UTILES
+==================================================== */
+.titre-ligne {
+  background-color: white;
+  padding-left: 8px;
+  padding-right: 8px;
+}

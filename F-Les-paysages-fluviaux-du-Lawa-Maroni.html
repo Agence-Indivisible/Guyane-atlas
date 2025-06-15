@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les paysages fluviaux du Lawa-Maroni</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-F">
+    <header class="header">
+        <a href="#">Retour à la carte</a>
+    </header>
+
+    <div class="hero">
+        <div class="title_id">
+            <div class="motif-container" style="background-image: url('motifs/motif-F.svg')">
+            </div>
+
+            <div class="hero-back">
+                <img class="image-back" src="motifs/seul - EP6.svg" />
+
+                <div class="hero-content">
+                    <h1 class="titre">
+                        <span class="titre-ligne">Les paysages fluviaux</span><br>
+                        <span class="titre-ligne">du Lawa-Maroni</span>
+                    </h1>
+
+                    <div class="hero-details">
+                        <img class="image_back" src="motifs/mini-carte - EP6.svg" />
+
+                        <p class="hero-text">
+                            Le long du Lawa-Maroni, les paysages sont façonnés par un large fleuve sombre et sinueux,
+                            bordé de ripisylves épaisses. Ce territoire fluvial accueille des bourgs, des dégrads, des
+                            habitats traditionnels bushinengués au nord et wayanas au sud de Maripasoula, ainsi que des
+                            pirogues et comptoirs commerciaux sur la rive surinamaise. Des pistes parallèles au fleuve,
+                            des défrichements linéaires et des sites d’orpaillage marquent également les berges, parfois
+                            dégradées. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+
+        <!-- Section 1 -->
+        <section>
+            <div class="grid">
+                <div class="card">
+                    <h2>Le Maroni de Saint-Laurent à Apatou
+                        Apatou
+                        Maïman
+                    </h2>
+                </div>
+
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="sliderF1">
+                            <img src="images/1681736020175.jpg" alt="Image">
+                            <img src="images/1681736020451.jpg" alt="Image">
+                            <img src="images/1681736020490.jpg" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'sliderF1')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'sliderF1')">&#10095;</button>
+                        <div class="dots" id="dotsF1">
+                            <span class="dot" onclick="goToSlide(0, 'sliderF1')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'sliderF1')"></span>
+                            <span class="dot" onclick="goToSlide(2, 'sliderF1')"></span>
+
+                        </div>
+                    </div>
+                    <div class="tag bati">
+                        <span class="tag-text">#Batiment et équipement</span>
+                        <div class="svg-container bati"></div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <video controls>
+                        <source src="images/VID_20230416_134448.mp4" type="video/mp4">
+
+                    </video>
+                    <div class="tag bati">
+                        <span class="tag-text">#Batiment et équipement</span>
+                        <div class="svg-container bati"></div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+
+                    <p class="quote">On va à la crique pour la fraicheur et la convivialité. On y va en pirogue, on peut
+                        voir des anacondas, des crocodiles !</p>
+
+                    <p class="quote">Ici, le sable de la route est devenu du bitume</p>
+
+                    <div class="tag">
+                        <span class="tag-text">#Mobilité</span>
+                        <div class="svg-container mobilite"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p class="quote">Les chasseurs vont dans la jungle. Quand j’ai besoin de faire restauration, si les
+                        touristes ont pas de voiture ont leur fait à manger avec</p>
+
+                    <p class="quote">La crique, on peut y boire l'eau, elle est délicieuse ! On y va pour la fraîcheur
+                        et la convivialité. On peut voir des anacondas, des crocodiles ! C'est magnifique</p>
+
+                    <p class="quote">J'aime que le jardin soit joli, que les passants trouvent ça joli. Donc la grille
+                        sert à bloquer les déchets qui vont sur mon terrain</p>
+
+                    <div class="tag ">
+                        <span class="tag-text">Relation à la nature</span>
+                        <div class="svg-container nature"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="sliderF1">
+                            <img src="images/1681736020202.jpg" alt="Image">
+                            <img src="images/1681736020473.jpg" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'sliderF1')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'sliderF1')">&#10095;</button>
+                        <div class="dots" id="dotsF1">
+                            <span class="dot" onclick="goToSlide(0, 'sliderF1')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'sliderF1')"></span>
+
+                        </div>
+                    </div>
+                    <div class="tag ">
+                        <span class="tag-text">Relation à la nature</span>
+                        <div class="svg-container nature"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <video controls>
+                        <source src="images/VID_20230416_134430.mp4" type="video/mp4">
+
+                    </video>
+
+                    <div class="tag ">
+                        <span class="tag-text">#Territoire</span>
+                        <div class="svg-container territoire"></div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </section>
+
+        <div class="separator"></div>
+        <section>
+            <div class="grid">
+                <div class="card">
+                    <h2>Le Maroni de Apatou à Maripasoula
+                        Langa Tabiki
+                        Gaa Kaba
+                        Gran Santi
+                        Papaïchton
+                        Maripasoula
+                    </h2>
+                </div>
+
+                <div class="card">
+                    <p class="quote">Déforester est légitime pour, les habitations, les abattis, car tout le monde vie
+                        de ça ici, ou construire des entreprises car il n'y a pas de travail ici</p>
+
+                    <p class="quote">J'ai fait des décos, comme ça, tous les touristes qui passent se prennent en photo
+                    </p>
+
+                    <p class="quote">Mes enfant je leur montre comment s'occuper de l'abbati. j'ai 7 filles a qui je
+                        transmets, mais mes enfants à saint Laurent je ne peux pas leur transmettre ils sont à l'école
+                        et il n'y en a pas ici</p>
+
+                    <p class="quote">On achète chez les chinois au Suriname. Sinon c'est trop cher les produits</p>
+
+                    <div class="tag ">
+                        <span class="tag-text">#Bati et équipement</span>
+                        <div class="svg-container bati"></div>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="sliderF3">
+                            <img src="images/1681830988796.jpg" alt="Image">
+                            <img src="images/1681830988825.jpg" alt="Image">
+                            <img src="images/1681830988796.jpg" alt="Image">
+                            <img src="images/1681771071900.jpg" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'sliderF3')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'sliderF3')">&#10095;</button>
+                        <div class="dots" id="dotsF3">
+                            <span class="dot" onclick="goToSlide(0, 'sliderF3')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'sliderF3')"></span>
+                            <span class="dot" onclick="goToSlide(2, 'sliderF3')"></span>
+                            <span class="dot" onclick="goToSlide(3, 'sliderF3')"></span>
+
+                        </div>
+                    </div>
+                    <div class="tag ">
+                        <span class="tag-text">#Bati et équipement</span>
+                        <div class="svg-container bati"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p class="quote">Le bruit des filong du Surinam, c'est agaçant, ils percent les pots en plus</p>
+
+                    <p class="quote">C'est bruyant et l'odeur de l'essence du Suriname est forte, mais on est bien au
+                        bord du fleuve</p>
+
+                    <p class="quote">J'aime trop aller sur les Kampoes c'est calme tu pêches. Mais ceux qui vivent sur
+                        les kampoes, c'est compliqué pour eux d'aller à l'école surtout si ils ont pas de pirogues</p>
+
+                    <p class="quote">J'adore l'aéroport, c'est trop bien. On peut apprendre à conduire là-bas.</p>
+
+                    <div class="tag ">
+                        <span class="tag-text">#Mobilité</span>
+                        <div class="svg-container mobilite"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="image-wrapper">
+                        <img src="images/1681830988777.jpg" alt="Image 1">
+                    </div>
+                    <div class="tag ">
+                        <span class="tag-text">#Mobilité</span>
+                        <div class="svg-container mobilite"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <p class="quote">Saint Laurent c'est bien, mais c'est trop sale. Vu que ma mère habite à Gran Santi,
+                        on en profite le weekend</p>
+
+                    <p class="quote">Ici les bushinengués, ils plantent avec la vraie terre et ça pousse. C'est mieux
+                        pour la santé des enfants, et pour manger frais !</p>
+
+                    <p class="quote">Le recyclage, la pollution. Il faut sensibiliser de pas polluer en jetant des
+                        choses dans l'eau il faut des mayouri</p>
+
+             
+
+                </div>
+
+
+                <div class="card">
+                    <p class="quote">Il y'a des enfants qui jouent, y a des serpents, des bestioles et donc pour la
+                        santé des gens c'est pas terrible pour rassurer un touriste c'est pas comme ça. Ici c'est maudit
+                    </p>
+
+                    <p class="quote">Il faudrait écrire des trucs historiques, expliquer comment le village était avant
+                        mais quand t'es pas le chef... Ici, ils veulent développer sans sensibiliser.</p>
+
+                    <p class="quote">Je viens ici pour aider à construire, en face le travail est moins bien payé</p>
+
+                    <p class="quote">C'est bruyant et l'odeur de l'essence du Suriname est forte, mais on est bien au
+                        bord du fleuve</p>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="sliderF1">
+                            <img src="images/1681830988802.jpg" alt="Image">
+                            <img src="images/1681769601314.jpg" alt="Image">
+                            <img src="images/1681771071922.jpg" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'sliderF1')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'sliderF1')">&#10095;</button>
+                        <div class="dots" id="dotsF1">
+                            <span class="dot" onclick="goToSlide(0, 'sliderF1')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'sliderF1')"></span>
+                            <span class="dot" onclick="goToSlide(2, 'sliderF1')"></span>
+
+                        </div>
+                    </div>
+                    <div class="tag ">
+                        <span class="tag-text">#Territoire</span>
+                        <div class="svg-container territoire"></div>
+                    </div>
+                </div>
+
+
+        </section>
+
+        <div class="separator"></div>
+
+
+        <!-- Section 2 -->
+        <section>
+            <div class="grid">
+                <div class="card">
+                    <h2>La Haut du Maroni
+                        Le Lawa
+                        Taluen
+                        Antecume Pata
+                    </h2>
+                </div>
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="sliderF2">
+                            <img src="images/1681736020202.jpg" alt="Image">
+                            <img src="images/1681736020473.jpg" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'sliderF2')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'sliderF2')">&#10095;</button>
+                        <div class="dots" id="dotsF2">
+                            <span class="dot" onclick="goToSlide(0, 'sliderF2')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'sliderF2')"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <video controls>
+                        <source src="images/VID_20230416_134430.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <span class="tag green">#Mobilité</span>
+                </div>
+
+
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Section 3 -->
+        <section>
+            <div class="grid">
+                <div class="card">
+                    <h2>La Haut du Maroni
+                        Le Lawa
+                        Taluen
+                        Antecume Pata</h2>
+                </div>
+
+                <div class="card">
+
+                    <p class="quote">"Aujourd'hui, les gens veulent vivre dans du dur, même si c'est thermiquement moins
+                        bon. Donc y'aura sûrement des clim plus tard et donc agrandissement de la centrale solaire."</p>
+
+                    <p class="quote">"Avant y'avait pas de Chinois. On consommait, mais c'était notre bière
+                        traditionnelle. Il fallait travailler pour la faire. Les Chinois respectent pas les horaires de
+                        fermeture, les jeunes peuvent rester à boire jusqu'à 1h du matin, il y'en a qui sont morts en
+                        tombant dans l'eau."</p>
+
+                    <p class="quote">"Ça a beaucoup changé ! Notre maison avant on avait juste un carbet. Mais
+                        maintenant on est plus moderne. Y a électricité, l'eau du robinet."</p>
+
+                    <p class="quote">"Avant la pharmacie y'en avait pas. Avant les gens se soignaient naturellement.
+                        Aujourd'hui, le dispensaire nous donne les ordonnances. C'est bien et mal, parce qu'on perd
+                        notre culture."</p>
+
+                    <span class="tag green">#Bâti et équipement</span>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="image-wrapper">
+                        <img src="images/1681769470675.jpg" alt="Image 1">
+                    </div>
+                    <span class="tag green">#territoire</span>
+
+                </div>
+
+
+                <div class="card">
+                    <div class="guillemet guillemet-top">
+                        <svg width="41" height="27" viewBox="0 0 41 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.0662 0C15.6208 0 19.6311 4.18803 19.6311 10.3899C19.5963 19.3996 12.1792 25.7698 1.47868 26.9927C0.487405 27.107 0.104809 25.8492 1.01782 25.4791C5.12203 23.8116 7.19675 21.6961 7.46457 19.6029C7.66456 18.0385 6.73416 16.6679 5.56376 16.4106C2.53255 15.7452 0.501317 12.2973 0.501317 8.73498C0.501317 6.41832 1.50905 4.19654 3.30281 2.55842C5.09658 0.92029 7.52945 0 10.0662 0ZM30.9351 0C36.4897 0 40.5 4.18803 40.5 10.3899C40.4652 19.3996 33.0481 25.7698 22.3476 26.9927C21.3563 27.107 20.9737 25.8492 21.8867 25.4791C25.9909 23.8116 28.0656 21.6961 28.3334 19.6029C28.5334 18.0385 27.603 16.6679 26.4326 16.4106C23.4014 15.7452 21.3702 12.2973 21.3702 8.73498C21.3702 6.41832 22.3779 4.19654 24.1717 2.55842C25.9655 0.92029 28.3983 0 30.9351 0Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <p class="quote">"Les pistes de quad, les ouvertures qu'on voit, c'est l'orpaillage. Vivre ici, ça
+                        aiguise les sens, donc on voit même les petits changements, ça saute aux yeux."</p>
+
+                    <span class="tag green">#environnement</span>
+                    <div class="guillemet guillemet-back">
+                        <svg width="41" height="27" viewBox="0 0 41 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M30.9338 27C25.3792 27 21.3689 22.812 21.3689 16.6101C21.4037 7.6004 28.8208 1.23022 39.5213 0.0073204C40.5126 -0.107029 40.8952 1.15081 39.9822 1.52085C35.878 3.18844 33.8033 5.30389 33.5354 7.39711C33.3354 8.96147 34.2658 10.3321 35.4362 10.5894C38.4674 11.2548 40.4987 14.7027 40.4987 18.265C40.4987 20.5817 39.491 22.8035 37.6972 24.4416C35.9034 26.0797 33.4705 27 30.9338 27ZM10.0649 27C4.5103 27 0.5 22.812 0.5 16.6101C0.534782 7.6004 7.95193 1.23022 18.6524 0.0073204C19.6437 -0.107029 20.0263 1.15081 19.1133 1.52085C15.0091 3.18844 12.9344 5.30389 12.6666 7.39711C12.4666 8.96147 13.397 10.3321 14.5674 10.5894C17.5986 11.2548 19.6298 14.7027 19.6298 18.265C19.6298 20.5817 18.6221 22.8035 16.8283 24.4416C15.0345 26.0797 12.6017 27 10.0649 27Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-wrapper">
+                        <img src="images/IMG_3071.JPG" alt="Image 1">
+                    </div>
+                    <span class="tag green">#territoire</span>
+
+                </div>
+
+                <div class="card">
+                    <div class="guillemet guillemet-top">
+                        <svg width="41" height="27" viewBox="0 0 41 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.0662 0C15.6208 0 19.6311 4.18803 19.6311 10.3899C19.5963 19.3996 12.1792 25.7698 1.47868 26.9927C0.487405 27.107 0.104809 25.8492 1.01782 25.4791C5.12203 23.8116 7.19675 21.6961 7.46457 19.6029C7.66456 18.0385 6.73416 16.6679 5.56376 16.4106C2.53255 15.7452 0.501317 12.2973 0.501317 8.73498C0.501317 6.41832 1.50905 4.19654 3.30281 2.55842C5.09658 0.92029 7.52945 0 10.0662 0ZM30.9351 0C36.4897 0 40.5 4.18803 40.5 10.3899C40.4652 19.3996 33.0481 25.7698 22.3476 26.9927C21.3563 27.107 20.9737 25.8492 21.8867 25.4791C25.9909 23.8116 28.0656 21.6961 28.3334 19.6029C28.5334 18.0385 27.603 16.6679 26.4326 16.4106C23.4014 15.7452 21.3702 12.2973 21.3702 8.73498C21.3702 6.41832 22.3779 4.19654 24.1717 2.55842C25.9655 0.92029 28.3983 0 30.9351 0Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <p class="quote">"Tu entends les oiseaux qui annoncent que la nuit va se coucher, les Wayanas
+                        imitent les sons tellement bien que les animaux répondent."</p>
+
+                    <p class="quote">"Il y a de moins en moins de poissons. L'activité changera ou ils iront plus en
+                        amont pour pêcher là où les poissons vivent encore."</p>
+
+                    <p class="quote">"L'eau n'est plus claire, c'est dégueulasse, il y a des plastiques partout. Et
+                        parfois ça gratte sur la peau, ça donne la varicelle. Et les gens demandent de l'eau potable.
+                        Avant, on pouvait boire de l'eau dans le fleuve même. Maintenant, ils ont récupéré l'eau de
+                        pluie et parfois ça termine rapidement."</p>
+
+                    <span class="tag green">#environnement</span>
+
+                </div>
+
+                <div class="card">
+                    <div class="image-wrapper">
+                        <img src="images/IMG_3050.JPG" alt="Image 1">
+                    </div>
+                    <span class="tag green">#territoire</span>
+
+                </div>
+
+
+                <div class="card">
+
+
+                    <p class="quote">"Les garimpeiros, les chinois, ils font n'importe quoi. Ça devient dangereux. Ils
+                        nous volent et prennent dans l'abattis et on a pas de radio pour appeler la police."</p>
+
+                    <p class="quote">"Les habits ont changé, les musiques aussi. Maintenant, on s'habille comme sur le
+                        littoral."</p>
+
+                    <p class="quote">"Le changement est ambivalent, la qualité de vie qui s'améliore mais il y a la
+                        perte des traditions et des liens sociaux."</p>
+
+                    <span class="tag blue">#changements sociaux</span>
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

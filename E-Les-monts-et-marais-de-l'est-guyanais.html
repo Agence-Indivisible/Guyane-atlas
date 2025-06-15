@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les monts et marais de l'est guyanais</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-E">
+    <header class="header">
+        <a href="#">Retour à la carte</a>
+    </header>
+
+    <div class="hero">
+        <div class="title_id">
+            <div class="motif-container" style="background-image: url('motifs/motif-E.svg')">
+            </div>
+
+            <div class="hero-back">
+                <img class="image-back" src="motifs/seul - EP5.svg" />
+
+                <div class="hero-content">
+                    <h1 class="titre">
+                        <span class="titre-ligne">Les monts et marais</span><br>
+                        <span class="titre-ligne">de l'est guyanais</span>
+                    </h1>
+
+                    <div class="hero-details">
+                        <img class="image_back" src="motifs/mini-carte - EP5.svg" />
+
+                        <p class="hero-text">
+                            À l'est de la Guyane, le paysage se compose de monts boisés, de forêts alluviales et de vastes
+                            marécages. Le fleuve Approuague, avec sa large embouchure, structure ce territoire ponctué de bourgs
+                            fluviaux et de villages perchés sur les versants, offrant un cadre à la fois naturel et pittoresque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="container">
+
+        <!-- Section 1 -->
+        <section>
+            <div class="grid">
+                <div class="card">
+                    <h2>Les marais de l'est guyanais
+                        Kaw</h2>
+                </div>
+
+                <div class="card">
+
+
+                    <p class="quote">"Pour les touristes, tu peux observer la faune avec les caravelles, tu peux même
+                        dormir là-bas."</p>
+
+
+                    <div class="tag bati">
+                        <span class="tag-text">#Bati et équipement</span>
+                        <div class="svg-container bati"></div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="slider1">
+                            <img src="images/1682247068893.jpg" alt="Image">
+                            <img src="images/1682247069028.jpg" alt="Image">
+                            <img src="images/IMG_1997.JPG" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'slider1')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'slider1')">&#10095;</button>
+                        <div class="dots" id="dots1">
+                            <span class="dot" onclick="goToSlide(0, 'slider1')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'slider1')"></span>
+                            <span class="dot" onclick="goToSlide(2, 'slider1')"></span>
+                        </div>
+                    </div>
+                    <div class="tag bati">
+                        <span class="tag-text">#Bati et équipement</span>
+                        <div class="svg-container bati"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="image-wrapper">
+                    <img src="images/1682247068908.jpg" alt="Image 1">
+                    </div>
+                    <div class="tag bati">
+                        <span class="tag-text">#Mobilité</span>
+                        <div class="svg-container mobilite"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+
+                    <p class="quote">"C'est magnifique, les marais, tu peux voir toutes sortes d'animaux. Moi je connais
+                        les coins, je peux te montrer, tu peux voir des caïmans, etc."</p>
+
+                    <p class="quote">"C'est là où il y a le plus de moustiques, mais nous, on est habitués."</p>
+
+                    <p class="quote">"Quand tu connais, c'est assez facile de voir certains animaux. L'hoazin à Kaw,
+                        c'est le seul oiseau ruminant sur terre, il y a aussi le coq de roche. Il y a des opérateurs
+                        touristiques là-bas, nuits et jours, donc ça protège, sinon ils seraient décimés. Si c'est du
+                        tourisme à 1000 places, ça craindra, mais à plus petite échelle, ça peut être bénéfique."</p>
+
+
+                    <div class="tag bati">
+                        <span class="tag-text">#Relation à la nature</span>
+                        <div class="svg-container nature"></div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="slider-container">
+                        <div class="slider" id="slider2">
+                            <img src="images/1682247068692.jpg" alt="Image">
+                            <img src="images/1682247068715.jpg" alt="Image">
+                            <img src="images/1682247068769.jpg" alt="Image">
+                            <img src="images/1682247068805.jpg" alt="Image">
+                            <img src="images/1682247068863.jpg" alt="Image">
+                            <img src="images/1682247068899.jpg" alt="Image">
+                        </div>
+                        <button class="nav prev" onclick="moveSlide(-1, 'slider2')">&#10094;</button>
+                        <button class="nav next" onclick="moveSlide(1, 'slider2')">&#10095;</button>
+                        <div class="dots" id="dots2">
+                            <span class="dot" onclick="goToSlide(0, 'slider2')"></span>
+                            <span class="dot" onclick="goToSlide(1, 'slider2')"></span>
+                            <span class="dot" onclick="goToSlide(2, 'slider2')"></span>
+                            <span class="dot" onclick="goToSlide(3, 'slider2')"></span>
+                            <span class="dot" onclick="goToSlide(4, 'slider2')"></span>
+
+
+                        </div>
+                    </div>
+                    <div class="tag bati">
+                        <span class="tag-text">#Territoire</span>
+                        <div class="svg-container territoire"></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

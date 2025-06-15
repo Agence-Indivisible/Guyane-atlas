@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas de la Guyane</title>
+
+  <link href="https://fonts.cdnfonts.com/css/mansalva" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .home {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+    }
+
+    .home-details {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      background-color: #f8f9fa;
+    }
+
+    .home-details h1 {
+      font-family: 'Mansalva', sans-serif;
+      font-size: 48px;
+      color: #577b35;
+      margin-bottom: 1rem;
+    }
+
+    .home-details p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .iframe-wrapper {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Cacher certains éléments spécifiques à Genially */
+    .hAmUPV.hAmUPV.hAmUPV,
+    .kinLpM svg {
+      display: none !important;
+    }
+
+    /* Responsive : sur petit écran, tout devient vertical */
+    @media (max-width: 900px) {
+      .home {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .home-details {
+        padding: 1.5rem;
+        text-align: center;
+        height: auto;
+        order: 1;
+      }
+
+      .home-details h1 {
+        font-size: 36px;
+      }
+
+      .iframe-wrapper {
+        width: 100%;
+        height: 100vh;
+        order: 2;
+      }
+
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .home-details h1 {
+        font-size: 28px;
+      }
+
+      .home-details p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="home">
+    <div class="home-details">
+      <h1>L'atlas de la Guyane</h1>
+      <p>
+        Bienvenue sur notre cartographie interactive des ensembles paysagers de la Guyane.
+        Nous vous invitons à explorer la diversité des paysages guyanais, depuis les forêts profondes jusqu'aux zones
+        littorales,
+        en passant par les savanes et les fleuves.
+        En cliquant sur chaque zone de la carte, vous accéderez à des contenus dédiés pour mieux comprendre les éléments
+        qui composent ces territoires :
+        leur nature, les activités humaines qui s'y développent, et les liens entre les habitants et leur environnement.
+      </p>
+    </div>
+    <div class="iframe-wrapper">
+      <div class="iframe-container">
+        <iframe title="L'atlas de la Guyane"
+          src="https://view.genially.com/684161635de72974ecd74d89" allowfullscreen scrolling="yes"
+          allowscriptaccess="always" allownetworking="all"></iframe>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
