@@ -34,10 +34,14 @@ body {
   background-color: rgba(var(--primary-color-rgb), 0.05);
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: underline;
+.header a {
+  color: black;
+  font-family: 'Mansalva', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
 }
+
+
 
 /* ====================================================
   TYPOGRAPHIE
@@ -91,6 +95,8 @@ section {
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .hero {
   overflow: hidden;
@@ -765,6 +771,14 @@ video {
     width: 100%;
     height: 100%;
   }
+  .genially-embed .router-container,
+  .genially-lightbox-modal .router-container {
+      height: 566px !important;
+  }
+.genially-embed .provider-container, .genially-lightbox-modal .provider-container {
+    align-items: flex-start !important;
+}
+
 }
 
 @media (max-width: 600px) {
@@ -798,5 +812,46 @@ video {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+
+
+/* ====================================================
+  FORMAT CARRE MOBILE
+==================================================== */
+
+@media (max-width: 768px) {
+  .card img,
+  .image-wrapper,
+  video,
+  .slider-container {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    border-radius: 30px; 
+    aspect-ratio: 1/1;/* plus petit rayon pour petits écrans */
+  }
+
+  .slider-container .slider img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  .image-wrapper {
+    padding-bottom: 0;
+  }
+
+  .card img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .video-wrapper,
+  video {
+    width: 100% !important;
+    height: auto !important;
   }
 }
