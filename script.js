@@ -6,7 +6,8 @@ const currentSlides = {};
 function moveSlide(direction, sliderId) {
     const slider = document.getElementById(sliderId);
     const slides = slider.querySelectorAll('img');
-    const dots = document.getElementById('dots' + sliderId.slice(-1));
+    const dotsId = 'dots' + sliderId.replace('slider', '');
+    const dots = document.getElementById(dotsId);
     const dotElements = dots.querySelectorAll('.dot');
 
     if (!currentSlides[sliderId]) {
@@ -32,7 +33,8 @@ function goToSlide(index, sliderId) {
 function updateSlider(sliderId) {
     const slider = document.getElementById(sliderId);
     const slides = slider.querySelectorAll('img');
-    const dots = document.getElementById('dots' + sliderId.slice(-1));
+    const dotsId = 'dots' + sliderId.replace('slider', '');
+    const dots = document.getElementById(dotsId);
     const dotElements = dots.querySelectorAll('.dot');
 
     slides.forEach((slide, index) => {
@@ -137,15 +139,60 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fullscreen slider
     // ========================
 
-const fullscreenBtn = document.getElementById('fullscreen-btn-slider2');
-const sliderContainer = fullscreenBtn.closest('.slider-container');
-
-fullscreenBtn.addEventListener('click', () => {
-  if (!document.fullscreenElement) {
-    sliderContainer.requestFullscreen().catch(err => {
-      alert(`Erreur lors du passage en plein écran: ${err.message}`);
+// Gestion des boutons plein écran pour tous les sliders
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav.fullscreen').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sliderContainer = this.closest('.slider-container');
+            const slider = sliderContainer.querySelector('.slider');
+            
+            if (!document.fullscreenElement) {
+                // Sauvegarder l'état actuel du slider
+                const currentSlide = currentSlides[slider.id] || 0;
+                
+                // Passer en plein écran
+                if (sliderContainer.requestFullscreen) {
+                    sliderContainer.requestFullscreen();
+                } else if (sliderContainer.webkitRequestFullscreen) {
+                    sliderContainer.webkitRequestFullscreen();
+                } else if (sliderContainer.msRequestFullscreen) {
+                    sliderContainer.msRequestFullscreen();
+                }
+                
+                // S'assurer que le slider actif reste visible
+                setTimeout(() => {
+                    updateSlider(slider.id);
+                }, 100);
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        });
     });
-  } else {
-    document.exitFullscreen();
-  }
 });
+
+// Gérer la sortie du plein écran
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+function handleFullscreenChange() {
+    if (!document.fullscreenElement && 
+        !document.webkitFullscreenElement && 
+        !document.mozFullScreenElement && 
+        !document.msFullscreenElement) {
+        // Mettre à jour tous les sliders lors de la sortie du plein écran
+        document.querySelectorAll('.slider').forEach(slider => {
+            if (slider.id) {
+                updateSlider(slider.id);
+            }
+        });
+    }
+}

@@ -3,18 +3,20 @@
 ==================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/coluna-rounded');
+@import url('https://fonts.cdnfonts.com/css/mansalva');
+
 
 /* ====================================================
   VARIABLES DE COULEURS PAR THÈME (CSS Custom Properties)
 ==================================================== */
-.theme-A { --primary-color: #567B34; --primary-color-rgb: 86, 123, 52; }
+.theme-A { --primary-color: #3d5931; --primary-color-rgb: 86, 123, 52; }
 .theme-B { --primary-color: #DD9341; --primary-color-rgb: 221, 147, 65; }
 .theme-C { --primary-color: #FAA619; --primary-color-rgb: 250, 166, 25; }
 .theme-D { --primary-color: #577199; --primary-color-rgb: 87, 113, 153; }
 .theme-E { --primary-color: #E08044; --primary-color-rgb: 224, 128, 68; }
 .theme-F { --primary-color: #903012; --primary-color-rgb: 144, 48, 18; }
 .theme-G { --primary-color: #6097ED; --primary-color-rgb: 96, 151, 237; }
-.theme-H { --primary-color: #6A8D67; --primary-color-rgb: 106, 141, 103; }
+.theme-H { --primary-color: #567d55; --primary-color-rgb: 106, 141, 103; }
 .theme-I { --primary-color: #9E2128; --primary-color-rgb: 158, 33, 40; }
 
 /* ====================================================
@@ -55,6 +57,7 @@ h2 {
 }
 
 p {
+   font-family: 'Poppins', sans-serif;
   color: var(--primary-color);
 }
 
@@ -103,8 +106,36 @@ section {
 }
 
 .hero-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-content .titre {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.hero-content .hero-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-content img {
@@ -154,6 +185,7 @@ section {
 @media (max-width: 945px) {
   .image-back {
     display: none;
+    
   }
 }
 
@@ -176,6 +208,7 @@ section {
   max-width: 300px;
   flex: 2;
   max-height: 420px;
+  position: relative;
 }
 
 .pattern-box,
@@ -184,7 +217,7 @@ section {
   left: 50px;
   top: 160px;
   background-size: cover;
-  border-radius: 16px;
+  border-radius: 75px;
   z-index: 2;
 }
 
@@ -203,6 +236,20 @@ section {
   width: 100%;
   background-repeat: repeat;
   background-size: contain;
+  background-size: 200px 200px;
+  position: relative
+}
+
+.motif-container::after{
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 30%;
+    z-index: 0;
 }
 
 /* ====================================================
@@ -226,7 +273,20 @@ section {
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.2s ease forwards;
 }
+
+/* Ajouter un délai pour chaque citation */
+.card .quote:nth-child(1) { animation-delay: 0.02s; }
+.card .quote:nth-child(2) { animation-delay: 0.04s; }
+.card .quote:nth-child(3) { animation-delay: 0.06s; }
+.card .quote:nth-child(4) { animation-delay: 0.08s; }
 
 .card:has(.quote) {
   background-size: 70px;
@@ -286,7 +346,7 @@ section {
   height: 400px;
   overflow: hidden;
   margin: auto;
-  border-radius: 8px;
+  border-radius: 75px;
   position: relative;
 }
 
@@ -396,7 +456,7 @@ section {
 
 .nav.fullscreen {
   top: 30px;
-  right: 10px;
+  right: 42px;
   left: auto;
   font-size: 1.5rem;
   background: rgba(0, 0, 0, 0.5);
@@ -473,9 +533,13 @@ section {
   DÉTAILS VISUELS & ICONOGRAPHIE
 ==================================================== */
 .quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem 0;
   font-style: italic;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.2s ease forwards;
 }
 
 .content {
@@ -532,7 +596,7 @@ section {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 75px;
   position: relative;
 }
 
@@ -542,7 +606,7 @@ section {
   height: 400px;
   padding-bottom: 75%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 75px;
 }
 
 .image-wrapper::after {
@@ -560,7 +624,7 @@ video {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 75px;
   position: relative;
 }
 
@@ -599,4 +663,140 @@ video {
   background-color: white;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+
+
+
+
+/* ====================================================
+  HOME
+==================================================== */
+
+.home {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.home-details {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.home-details h1 {
+  font-family: 'Mansalva', sans-serif;
+  font-size: 60px;
+  color: #577b35;
+  margin-bottom: 1rem;
+}
+
+.home-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.iframe-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Cacher certains éléments spécifiques à Genially */
+.hAmUPV.hAmUPV.hAmUPV,
+.kinLpM svg {
+  display: none !important;
+}
+
+/* Responsive : sur petit écran, tout devient vertical */
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .home-details {
+    padding: 1.5rem;
+    text-align: center;
+    height: auto;
+    order: 1;
+  }
+
+  .home-details h1 {
+    font-size: 35px;
+  }
+
+  .iframe-wrapper {
+    width: 100%;
+    height: 100vh;
+    order: 2;
+  }
+
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-details h1 {
+    font-size: 28px;
+  }
+
+  .home-details p {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  /* Tu peux ajouter un délai si tu veux */
+  /* animation-delay: 0.3s; */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
