@@ -101,7 +101,7 @@ section {
 .hero {
   overflow: hidden;
   background-color: white;
-  height: 90vh;
+  height: 70vh;
 }
 
 @media (max-width: 768px) {
