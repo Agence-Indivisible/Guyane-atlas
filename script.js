@@ -196,3 +196,19 @@ function handleFullscreenChange() {
         });
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tags = document.querySelectorAll('.tag');
+
+    tags.forEach(tag => {
+        const span = tag.querySelector('.tag-text');
+        const div = tag.querySelector('.svg-container');
+
+        // Vérifiez que les éléments existent
+        if (span && div) {
+            // Déplacer le div avant le span
+            tag.insertBefore(div, span);
+        }
+    });
+});

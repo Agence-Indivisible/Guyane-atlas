@@ -117,6 +117,7 @@ p {
 
 section {
   margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 /* ====================================================
@@ -149,7 +150,7 @@ section {
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards;
@@ -251,9 +252,10 @@ section {
   IMAGES / MOTIFS / ELEMENTS DÉCORATIFS
 ==================================================== */
 .image-back {
-  max-height: 420px;
+  max-height: 460px;
   position: relative;
   padding-bottom: 160px;
+  max-width: 260px;
 }
 
 .pattern-box,
@@ -318,7 +320,7 @@ section {
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
-  font-size: 1.2rem;
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-style: italic;
@@ -354,25 +356,25 @@ section {
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: center;
+  column-count: 2;
+  column-gap: 1.5rem;
+  width: 100%;
 }
 
 .grid .card {
-  flex: 1 1 calc(50% - 1.5rem);
   min-width: 300px;
-  max-width: calc(50% - 1.5rem);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 768px) {
+  .grid {
+    column-count: 1;
+  }
+  
   .grid .card {
-    flex: 1 1 100%;
     max-width: 100%;
   }
 }
@@ -403,7 +405,7 @@ section {
   height: 400px;
   overflow: hidden;
   margin: auto;
-  border-radius: 75px;
+  border-radius: 20px;
   position: relative;
 }
 
@@ -518,7 +520,7 @@ section {
 
 .nav.fullscreen {
   top: 30px;
-  right: 42px;
+  right: 20px;
   left: auto;
   font-size: 1.5rem;
   background: rgba(0, 0, 0, 0.5);
@@ -659,7 +661,7 @@ section {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 75px;
+  border-radius: 20px;
   position: relative;
 }
 
@@ -669,7 +671,7 @@ section {
   height: 400px;
   padding-bottom: 75%;
   overflow: hidden;
-  border-radius: 75px;
+  border-radius: 20px;
 }
 
 .image-wrapper::after {
@@ -687,7 +689,7 @@ video {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 75px;
+  border-radius: 20px;
   position: relative;
 }
 
