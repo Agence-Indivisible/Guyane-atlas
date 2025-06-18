@@ -26,6 +26,7 @@
         qui composent ces territoires :
         leur nature, les activités humaines qui s'y développent, et les liens entre les habitants et leur environnement.
       </p>
+      <button class="read-more-btn">En savoir plus</button>
     </div>
     <div class="iframe-wrapper">
       <div class="iframe-container">
@@ -45,6 +46,18 @@
   </section>
 </body>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    const text = document.querySelector('.home-details p');
+    
+    readMoreBtn.addEventListener('click', function() {
+      text.classList.toggle('expanded');
+      readMoreBtn.classList.toggle('expanded');
+      readMoreBtn.textContent = text.classList.contains('expanded') ? 'Voir moins' : 'En savoir plus';
+    });
+  });
+</script>
 
 </html>
 
