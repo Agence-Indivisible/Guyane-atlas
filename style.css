@@ -187,6 +187,7 @@ section {
 .hero .title_id {
   display: flex;
   flex-direction: column;
+  margin-bottom: 60px;
 }
 
 .hero h1 {
