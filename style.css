@@ -9,15 +9,50 @@
 /* ====================================================
   VARIABLES DE COULEURS PAR THÈME (CSS Custom Properties)
 ==================================================== */
-.theme-A { --primary-color: #3d5931; --primary-color-rgb: 86, 123, 52; }
-.theme-B { --primary-color: #DD9341; --primary-color-rgb: 221, 147, 65; }
-.theme-C { --primary-color: #FAA619; --primary-color-rgb: 250, 166, 25; }
-.theme-D { --primary-color: #577199; --primary-color-rgb: 87, 113, 153; }
-.theme-E { --primary-color: #E08044; --primary-color-rgb: 224, 128, 68; }
-.theme-F { --primary-color: #903012; --primary-color-rgb: 144, 48, 18; }
-.theme-G { --primary-color: #6097ED; --primary-color-rgb: 96, 151, 237; }
-.theme-H { --primary-color: #567d55; --primary-color-rgb: 106, 141, 103; }
-.theme-I { --primary-color: #9E2128; --primary-color-rgb: 158, 33, 40; }
+.theme-A {
+  --primary-color: #3d5931;
+  --primary-color-rgb: 86, 123, 52;
+}
+
+.theme-B {
+  --primary-color: #DD9341;
+  --primary-color-rgb: 221, 147, 65;
+}
+
+.theme-C {
+  --primary-color: #FAA619;
+  --primary-color-rgb: 250, 166, 25;
+}
+
+.theme-D {
+  --primary-color: #577199;
+  --primary-color-rgb: 87, 113, 153;
+}
+
+.theme-E {
+  --primary-color: #E08044;
+  --primary-color-rgb: 224, 128, 68;
+}
+
+.theme-F {
+  --primary-color: #903012;
+  --primary-color-rgb: 144, 48, 18;
+}
+
+.theme-G {
+  --primary-color: #6097ED;
+  --primary-color-rgb: 96, 151, 237;
+}
+
+.theme-H {
+  --primary-color: #567d55;
+  --primary-color-rgb: 106, 141, 103;
+}
+
+.theme-I {
+  --primary-color: #9E2128;
+  --primary-color-rgb: 158, 33, 40;
+}
 
 /* ====================================================
   BASE & RESET
@@ -53,15 +88,15 @@ h1 {
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Coluna Rounded', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 40px;
   margin: 2rem 0;
   color: var(--primary-color);
 }
 
 p {
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--primary-color);
 }
 
@@ -101,7 +136,7 @@ section {
 .hero {
   overflow: hidden;
   background-color: white;
-  height: 70vh;
+  height: auto;
 }
 
 @media (max-width: 768px) {
@@ -137,6 +172,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -184,14 +220,14 @@ section {
   width: 80%;
   margin: auto;
   margin-top: -70px;
-  gap: 50px;
+  gap: 20px;
   justify-content: center;
 }
 
 @media (max-width: 945px) {
   .image-back {
     display: none;
-    
+
   }
 
   .hero-text {
@@ -215,10 +251,9 @@ section {
   IMAGES / MOTIFS / ELEMENTS DÉCORATIFS
 ==================================================== */
 .image-back {
-  max-width: 300px;
-  flex: 2;
   max-height: 420px;
   position: relative;
+  padding-bottom: 160px;
 }
 
 .pattern-box,
@@ -250,16 +285,16 @@ section {
   position: relative
 }
 
-.motif-container::after{
+.motif-container::after {
   content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    opacity: 30%;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 30%;
+  z-index: 0;
 }
 
 /* ====================================================
@@ -293,10 +328,21 @@ section {
 }
 
 /* Ajouter un délai pour chaque citation */
-.card .quote:nth-child(1) { animation-delay: 0.02s; }
-.card .quote:nth-child(2) { animation-delay: 0.04s; }
-.card .quote:nth-child(3) { animation-delay: 0.06s; }
-.card .quote:nth-child(4) { animation-delay: 0.08s; }
+.card .quote:nth-child(1) {
+  animation-delay: 0.02s;
+}
+
+.card .quote:nth-child(2) {
+  animation-delay: 0.04s;
+}
+
+.card .quote:nth-child(3) {
+  animation-delay: 0.06s;
+}
+
+.card .quote:nth-child(4) {
+  animation-delay: 0.08s;
+}
 
 .card:has(.quote) {
   background-size: 70px;
@@ -346,6 +392,7 @@ section {
   margin: 10px 0;
   width: 100%;
   border-radius: 1px;
+  opacity: 0.1;
 }
 
 /* ====================================================
@@ -361,7 +408,7 @@ section {
 }
 
 @media (max-width: 768px) {
-  .slider-container { 
+  .slider-container {
     height: 300px;
   }
 }
@@ -431,8 +478,13 @@ section {
   z-index: 10;
 }
 
-.nav.prev { left: 10px; }
-.nav.next { right: 10px; }
+.nav.prev {
+  left: 10px;
+}
+
+.nav.next {
+  right: 10px;
+}
 
 .nav:hover {
   background: rgba(0, 0, 0, 0.7);
@@ -535,7 +587,8 @@ section {
 .slider-container:-webkit-full-screen .slider img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important; /* ou cover selon ce que tu préfères */
+  object-fit: contain !important;
+  /* ou cover selon ce que tu préfères */
 }
 
 
@@ -683,27 +736,35 @@ video {
   HOME
 ==================================================== */
 
+
+.body-home {
+  overflow: hidden;
+}
+
 .home {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+
 }
 
 .home-details {
   flex: 1;
-  padding: 2rem;
+  padding: 6rem;
+  padding-right: 0;
   overflow-y: auto;
   background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: white;
+  max-width: 700px;
+
 }
 
 .home-details h1 {
   font-family: 'Mansalva', sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   color: #577b35;
   margin-bottom: 1rem;
 }
@@ -712,7 +773,15 @@ video {
   font-size: 1rem;
   line-height: 1.6;
   font-family: 'Poppins', sans-serif;
-  padding: 3rem;
+  background: #ffffffab;
+    padding: 1rem;
+}
+
+.motif-home {
+  position: absolute;
+  width: 400px;
+  bottom: -78px;
+  left: -94px;
 }
 
 .iframe-wrapper {
@@ -741,8 +810,17 @@ video {
   display: none !important;
 }
 
+.motif-home{
+  display: inherit;
+}
+
 /* Responsive : sur petit écran, tout devient vertical */
 @media (max-width: 900px) {
+
+  .motif-home{
+    display: none;
+  }
+
   .home {
     flex-direction: column;
     height: auto;
@@ -753,6 +831,7 @@ video {
     text-align: center;
     height: auto;
     order: 1;
+    padding: 0rem;
   }
 
   .home-details h1 {
@@ -793,6 +872,7 @@ video {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -821,6 +901,7 @@ video {
 ==================================================== */
 
 @media (max-width: 768px) {
+
   .card img,
   .image-wrapper,
   video,
@@ -828,8 +909,9 @@ video {
     width: 100% !important;
     height: auto !important;
     max-width: 100%;
-    border-radius: 30px; 
-    aspect-ratio: 1/1;/* plus petit rayon pour petits écrans */
+    border-radius: 30px;
+    aspect-ratio: 1/1;
+    /* plus petit rayon pour petits écrans */
   }
 
   .slider-container .slider img {
