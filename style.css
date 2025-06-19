@@ -130,6 +130,9 @@ section {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 
@@ -356,6 +359,27 @@ section {
   border-radius: 10px;
   margin-top: 20px;
   align-items: flex-start;
+}
+
+.card:has(h2) i:first-of-type {
+  position: relative;
+  padding-left: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card:has(h2) i:first-of-type::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: var(--pin-bg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .grid {
@@ -794,6 +818,7 @@ video {
   padding: 1rem;
   transition: all 0.3s ease-out;
   position: relative;
+  font-weight: bold;
 }
 
 .home-details .read-more-btn {
@@ -882,6 +907,10 @@ video {
 .hAmUPV.hAmUPV.hAmUPV,
 .kinLpM svg {
   display: none !important;
+}
+
+.loader-genially {
+ width: 50px !important;
 }
 
 .motif-home {
@@ -1008,4 +1037,10 @@ video {
     width: 100% !important;
     height: auto !important;
   }
+}
+
+.svg-container.pin svg {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
 }

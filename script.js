@@ -61,22 +61,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const svgContainers = document.querySelectorAll('.svg-container');
 
     svgContainers.forEach(container => {
-        // Récupère la classe spécifique (bati, mobilite, etc.)
+        // Ajoute "pin" à la liste
         const classes = Array.from(container.classList);
         const iconClass = classes.find(cls =>
-            ['bati', 'mobilite', 'nature', 'territoire'].includes(cls)
+            ['bati', 'mobilite', 'nature', 'territoire', 'pin'].includes(cls)
         );
 
         if (iconClass) {
-            const svgPath = `pictos/picto-${iconClass}.svg`;
+            const svgPath = `pictos/${iconClass === 'pin' ? 'picto-pin' : 'picto-' + iconClass}.svg`;
 
             fetch(svgPath)
                 .then(res => {
-                    console.log(`Status fetch ${iconClass}:`, res.status);
                     if (!res.ok) throw new Error(`SVG introuvable: ${svgPath}`);
                     return res.text();
                 })
                 .then(svg => {
+                    // Pour le pin, on colore le SVG avec la couleur du thème
+                    if (iconClass === 'pin') {
+                        // Récupère la couleur du thème
+                        let color = getComputedStyle(document.body).getPropertyValue('--primary-color').trim();
+                        if (!color) color = '#3d5931';
+                        // Remplace la couleur de remplissage dans le SVG
+                        svg = svg.replace(/fill="[^"]*"/g, `fill="${color}"`);
+                    }
                     container.innerHTML = svg;
                 })
                 .catch(err => {
@@ -212,3 +219,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.card:has(h2) i:first-of-type').forEach(function(iTag) {
+    let color = getComputedStyle(document.body).getPropertyValue('--primary-color').trim();
+    if (!color) color = '#3d5931';
+    const svg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>`;
+    const encodedSVG = encodeURIComponent(svg).replace(/'/g, "%27").replace(/"/g, "%22");
+    const dataUri = `url("data:image/svg+xml,${encodedSVG}")`;
+    iTag.style.setProperty('--pin-bg', dataUri);
+  });
+});
+
+function injectPinBackgroundWithTheme() {
+  const style = getComputedStyle(document.body);
+  const rgb = style.getPropertyValue('--primary-color-rgb').trim() || '0,0,0';
+  const alpha = 1; // Opacité à 100% pour le pin
+
+  const rgbaColor = `rgba(${rgb}, ${alpha})`;
+
+  // SVG du pin avec couleur dynamique
+  const svg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="${rgbaColor}" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>`;
+  const encodedSVG = encodeURIComponent(svg).replace(/'/g, "%27").replace(/"/g, "%22");
+  const dataUri = `url("data:image/svg+xml,${encodedSVG}")`;
+
+  // Applique le background-image sur le ::before du premier <i> dans .card:has(h2)
+  document.querySelectorAll('.card:has(h2) i:first-of-type').forEach(iTag => {
+    iTag.style.setProperty('--pin-bg', dataUri);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', injectPinBackgroundWithTheme);

@@ -16,7 +16,7 @@
 
   <section class="home">
     <div class="home-details">
-      <h1 class="fade-in-up">Cartographie des ensembles paysagers de Guyane</h1>
+      <h1 class="fade-in-up">Cartographie interactive des ensembles paysagers de Guyane</h1>
       <p class="fade-in-up">
         Bienvenue sur notre cartographie interactive des ensembles paysagers de la Guyane.
         Nous vous invitons à explorer la diversité des paysages guyanais, depuis les forêts profondes jusqu'aux zones
@@ -34,7 +34,7 @@
         <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video
             class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted"
             style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
-            <source src="https://static.genially.com/resources/loader-default-rebranding.mp4" type="video/mp4" />Your
+            <source style="width: 50px;" src="https://static.genially.com/resources/loader-default-rebranding.mp4" type="video/mp4" />Your
             browser does not support the video tag.
           </video>
           <div id="684161635de72974ecd74d89" class="genially-embed"
@@ -57,6 +57,39 @@
       readMoreBtn.textContent = text.classList.contains('expanded') ? 'Voir moins' : 'En savoir plus';
     });
   });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Récupère la couleur du thème courant
+  const root = document.documentElement;
+  // Cherche la variable CSS --primary-color (héritée du body ou d'une classe theme-X)
+  let primaryColor = getComputedStyle(document.body).getPropertyValue('--primary-color');
+  if (!primaryColor) {
+    // Si non trouvée sur body, essaie sur :root
+    primaryColor = getComputedStyle(root).getPropertyValue('--primary-color');
+  }
+  primaryColor = primaryColor.trim() || '#3d5931'; // couleur par défaut
+
+  // Sélectionne tous les <i> qui doivent avoir un pin
+  document.querySelectorAll('.card:has(h2) i:first-of-type').forEach(function(iTag) {
+    // Vérifie si le pin n'est pas déjà inséré
+    if (!iTag.querySelector('.pin-svg')) {
+      // Crée le SVG inline
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('class', 'pin-svg');
+      svg.setAttribute('width', '18');
+      svg.setAttribute('height', '18');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('style', 'position:absolute;left:0;top:50%;transform:translateY(-50%);');
+      svg.innerHTML = '<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="' + primaryColor + '"/>';
+      // Ajoute le SVG avant le texte de <i>
+      iTag.style.position = 'relative';
+      iTag.insertBefore(svg, iTag.firstChild);
+      iTag.style.paddingLeft = '24px';
+    }
+  });
+});
 </script>
 
 </html>
