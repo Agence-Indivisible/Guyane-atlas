@@ -363,9 +363,10 @@ section {
 
 .card:has(h2) i:first-of-type {
   position: relative;
-  padding-left: 24px;
-  display: inline-block;
   vertical-align: middle;
+  text-align: center;
+  display: flex;
+  padding-left: 0px;
 }
 
 .card:has(h2) i:first-of-type::before {
@@ -376,10 +377,10 @@ section {
   background-image: var(--pin-bg);
   background-size: contain;
   background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+}
+
+.card:has(h2) i{
+  padding-left: 18px;
 }
 
 .grid {
@@ -664,7 +665,7 @@ section {
   gap: 0.5em;
   margin: auto;
   margin-top: 10px;
-  
+
 }
 
 .tag .tag-text {
@@ -910,7 +911,7 @@ video {
 }
 
 .loader-genially {
- width: 50px !important;
+  width: 50px !important;
 }
 
 .motif-home {
