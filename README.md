@@ -47,7 +47,7 @@ Le site utilise une grille de cartes (`.card`) pour présenter les contenus. Voi
 - Structure typique :
   ```html
   <div class="card">
-    <h2>Le titre de la section <i>optionnel</i></h2>
+    <h2>Le titre de la section</h2> <i>optionnel</i>
   </div>
   ```
 - Peut contenir un `<i>` pour un sous-titre ou une localisation, parfois décoré avec un pictogramme (ex : pin).
@@ -143,7 +143,8 @@ Le site utilise une grille de cartes (`.card`) pour présenter les contenus. Voi
 - Chaque carte peut contenir un ou plusieurs éléments : titre, citation, image, slider, vidéo, tag thématique.
 - Les tags permettent d'identifier la nature du contenu (bâti, nature, mobilité, etc.) via un texte et une icône SVG.
 - Les couleurs et motifs sont personnalisés par thème via des classes CSS (`theme-A`, `theme-B`, etc.).
-- Sur mobile, certains contenus (ex : texte d'intro) sont repliés par défaut et dépliables via un bouton accordéon.
+- Pour les tags il suffit d'ajouter à une div svg container le tag relatif par exemple       <div class="svg-container bati"></div>
+
 
 ---
 
